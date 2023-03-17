@@ -30,11 +30,13 @@ def chat_with_gpt(prompt):
     else:
         raise Exception("API request failed")
 
-@app.route('/generate', methods=['POST'])  # 更改路由
+@app.route('/generate', methods=['POST', 'GET'])  # 更改路由
 def generate():
     data = request.get_json()
     prompt = data['prompt']
+    print(f'Q: {prompt}')
     response_text = chat_with_gpt(prompt)
+    print(f'A: {response_text}')
     return jsonify({"response": response_text})
 
 if __name__ == '__main__':
