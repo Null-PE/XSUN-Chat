@@ -1,0 +1,77 @@
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #007aff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 400px;
+  overflow-y: scroll; /* 添加这一行 */
+  padding: 10px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+  background-color: #f4f4f4;
+}
+
+
+.message {
+  /* display: flex; */
+  margin-bottom: 10px;
+}
+
+.user-message .message-content {
+  margin-left: auto;
+  /* 添加以下代码，让消息靠右对齐 */
+  text-align: right;
+}
+
+.bot-message .message-content {
+  margin-right: auto;
+  /* 添加以下代码，让消息靠左对齐 */
+  text-align: left;
+}
+
+
+.input-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  overflow: auto;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.send-button {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
