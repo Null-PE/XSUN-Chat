@@ -27,13 +27,16 @@ export default {
   methods: {
     async submit() {
       if (this.userInput.trim() !== "") {
-        this.messages.push({ role: "user", content: this.userInput.trim() });
+        const input = this.userInput.trim();
+        console.log("Input: " + input);
+        this.messages.push({ role: "user", content: input });
         this.userInput = "";
 
         try {
           const response = await axios.post("http://127.0.0.1:5000/generate", {
             prompt: this.messages[this.messages.length - 1].content,
           });
+          console.log("Get resoponse: " + response.status);
 
           // Split the response into paragraphs
           const paragraphs = response.data.response.split('\n');
