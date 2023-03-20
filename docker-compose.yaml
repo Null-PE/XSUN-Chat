@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend # Replace this with the path to your backend folder
+    volumes:
+      - './backend:/app'
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build: ./frontend # Replace this with the path to your frontend folder
+    ports:
+      - '80:80'
+    depends_on:
+      - backend
